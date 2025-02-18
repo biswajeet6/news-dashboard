@@ -4,18 +4,25 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #dddbdb;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #dfdcdc;
+    --foreground: #f8eeee;
   }
 }
 
 body {
-  color: var(--foreground);
+  color: rgb(19, 128, 0);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+nav{
+
+  margin-bottom: 30px;
+}
+.to-indigo-700 {
+  --tw-gradient-to: #515151 var(--tw-gradient-to-position);
 }
