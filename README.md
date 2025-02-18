@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📰 Next.js News Dashboard
 
-## Getting Started
+A full-stack **Next.js** dashboard with **NextAuth.js authentication**, **Google/GitHub OAuth**, **Prisma ORM**, and **Recharts-based analytics**.
 
-First, run the development server:
+## 🚀 Features
+- User authentication with **NextAuth.js**
+- OAuth support for **Google & GitHub**
+- News API integration for fetching articles
+- Analytics dashboard with **charts**
+- **Dark Mode** toggle
+- Database setup with **Prisma & SQLite**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🛠️ Installation
+
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/yourusername/your-repo.git
+cd your-repo
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Install Dependencies
+```sh
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3️⃣ Set Up Environment Variables
+Create a **`.env.local`** file in the root folder and add the following:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```ini
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
 
-## Learn More
+GITHUB_CLIENT_ID=your-github-client-id
+GITHUB_CLIENT_SECRET=your-github-client-secret
 
-To learn more about Next.js, take a look at the following resources:
+NEXTAUTH_SECRET=your-random-secret-key
+NEXTAUTH_URL=http://localhost:3000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+NEWS_API_KEY=your-news-api-key
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+DATABASE_URL="file:./dev.db"  # Using SQLite (Change for production)
+```
 
-## Deploy on Vercel
+💡 **Never expose API keys in public repositories!** 🚨
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚡ Running the App
+
+### 4️⃣ Run the Development Server
+```sh
+npm run dev
+```
+Your Next.js app should now be running at:  
+🔗 **http://localhost:3000**
+
+### 5️⃣ Prisma Setup (If Using a Database)
+```sh
+npx prisma migrate dev --name init
+npx prisma generate
+```
+
+---
+
+## 📊 API Routes
+| Route                     | Description                          |
+|---------------------------|--------------------------------------|
+| `/api/auth/[...nextauth]` | Handles authentication (NextAuth.js) |
+| `/api/news`               | Fetches news articles from API      |
+
+---
+
+## 🏗️ Building for Production
+To generate an optimized production build:
+```sh
+npm run build
+npm start
+```
+
+
